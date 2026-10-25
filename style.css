@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color: white;
+  background: linear-gradient(135deg, #ff41f7, #ff496f, #ff8a9e);
+  background-size: 200% 200%;
+  animation: gradient 6s ease infinite;
+}
+
+.card {
+  width: 100%;
+  max-width: 500px;
+  padding: 35px 22px;
+  border: 1px solid rgba(255,255,255,.5);
+  border-radius: 28px;
+  background: rgba(255,255,255,.18);
+  box-shadow: 0 12px 35px rgba(120,0,60,.2);
+  backdrop-filter: blur(12px);
+  animation: appear 1s ease;
+}
+
+.heart {
+  font-size: 75px;
+  animation: beat 1s infinite;
+}
+
+h1 {
+  font-size: clamp(28px, 7vw, 42px);
+}
+
+h2 {
+  font-size: clamp(22px, 5vw, 30px);
+  margin: 25px 0;
+}
+
+p {
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+button {
+  width: 150px;
+  max-width: 100%;
+  padding: 14px 20px;
+  margin: 8px;
+  border: 2px solid white;
+  border-radius: 50px;
+  background: white;
+  color: #ff4081;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+button:active {
+  transform: scale(.95);
+}
+
+#noBtn {
+  background: transparent;
+  color: white;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@keyframes beat {
+  50% { transform: scale(1.15); }
+}
+
+@keyframes gradient {
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 380px) {
+  .card {
+    padding: 25px 12px;
+  }
+
+  button {
+    width: 130px;
+    margin: 5px;
+  }
+}
